@@ -1,22 +1,9 @@
 <template>
+  <div class="container">
 
-  <div id="home" class="container">
-
-  <ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation" class="navbar-right"><a href="#">Profile</a></li>
-  <li role="presentation" class="navbar-right"><a href="#">Messages</a></li>
-  </ul>
-
-  <div></div>
-
-  <div class="page-header">
-    <h1 style="text-align:center;">Gas Log Tracking</h1>
-  </div>
+    <h3></h3>
+ 
   <div class="panel panel-drfault">
-    <div class="panel-heading">
-      <!-- <h3>Add Record</h3> -->
-    </div>
     <div class="panel body">
       <form id="form" class="form-inline" v-on:submit.prevent="addBook">
         <div class="form-group">
@@ -41,10 +28,6 @@
   </div>
 
   <div class="panel panel-default">
-    <!--<div class="panel-heading">
-       <h3>Gas Log</h3>
-    </div>-->
-    <div class="panel-body">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -85,7 +68,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
   </div>
 
   </div>
@@ -111,7 +93,7 @@ var config = {
   let recordsRef = db.ref('books');
 
 export default {
-  name: 'Home',
+  name: 'home',
   firebase:{
   books: recordsRef
   },

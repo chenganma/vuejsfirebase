@@ -2,19 +2,19 @@
 
 <div class="container">
 
-  <h3>Login</h3>
+  <h3>Register</h3>
+  <div></div>
 
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="text" class="form-control" id="email" placeholder="Enter email" v-model="email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input v-model="email" type="email" class="form-control" id="email" placeholder="Enter email">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password" v-model="password">
+    <input v-model="password" type="password" class="form-control" id="password" placeholder="Password">
   </div>
-  <button v-on:click="login" type="submit" class="btn btn-primary">Login</button>
+  <button v-on:click="register" type="submit" class="btn btn-primary">Register</button>
 </form>
 
 </div>
@@ -24,9 +24,8 @@
 
 <script>
 import firebase from 'firebase';
-
 export default {
-  name:'login',
+  name:'register',
   data: function () {
     return {
       email: '',
@@ -34,15 +33,14 @@ export default {
     };
   },
   methods:{
-    login: function(e) {
+    register: function(e) {
       //console.log('test');
     firebase
        .auth()
-       .signInWithEmailAndPassword(this.email, this.password)
+       .createUserWithEmailAndPassword(this.email, this.password)
        .then(user =>{
-         alert(`You are logged in as ${this.email}`);
+         alert(`Account created for ${this.email}`);
          this.$router.go({path : this.$router.path});
-         console.log(this.$router.path);
        },
        err =>{
          alert(err.message);
