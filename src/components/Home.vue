@@ -1,9 +1,9 @@
 <template>
+
   <div class="container">
 
     <h3></h3>
- 
-  <div class="panel panel-drfault">
+
     <div class="panel body">
       <form id="form" class="form-inline" v-on:submit.prevent="addBook">
         <div class="form-group">
@@ -25,46 +25,26 @@
         <input type="submit" class="btn btn-primary" value="Add">
       </form>
     </div>
-  </div>
+  
 
   <div class="panel panel-default">
       <table class="table table-striped">
         <thead>
           <tr>
-           <th>
-            Date
-           </th>
-           <th>
-            Miles
-           </th>
-           <th>
-            Gallons
-           </th>
-           <th>
-            price
-           </th>
-           <th>
-            Delete
-           </th>
+           <th>Date</th>
+           <th>Miles</th>
+           <th>Gallons</th>
+           <th>price</th>
+           <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="book in books">
-            <td>
-              {{book.date}}
-            </td>
-            <td>
-              {{book.miles}}
-            </td>
-            <td>
-              {{book.gallons}}
-            </td>
-            <td>
-              {{book.price}}
-            </td>
-            <td>
-              <span class="glyphicon glyphicon-trash" v-on:click="removeBook(book)"></span>
-            </td>
+            <td>{{book.date}}</td>
+            <td>{{book.miles}}</td>
+            <td>{{book.gallons}}</td>
+            <td>{{book.price}}</td>
+            <td><span class="glyphicon glyphicon-trash" v-on:click="removeBook(book)"></span></td>
           </tr>
         </tbody>
       </table>

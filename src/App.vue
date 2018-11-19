@@ -1,10 +1,7 @@
 <template>
-  <div id="app">
-    
+  <div>
     <Navbar />
-
     <router-view/>
-
   </div>
 </template>
 
